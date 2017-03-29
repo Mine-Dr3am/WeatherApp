@@ -11,7 +11,7 @@
       </Style>
       <Style x:Key="fieldStyle" TargetType="Label">
         <Setter Property="TextColor">
-          <OnPlatform x:TypeArguments="Color" iOS="Black" Android="White" WinPhone="White" />
+          <OnPlatform x:TypeArguments="Color" iOS="Black" Android="Black" WinPhone="White" />
         </Setter>
         <Setter Property="FontSize" Value="Medium" />
       </Style>
@@ -23,7 +23,7 @@
 
   <ContentPage.Content>
     <ScrollView>
-      <StackLayout>
+      <StackLayout BackgroundColor="White">
         <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand"
               BackgroundColor="#545454">
          <StackLayout Padding="10,10,10,10" HorizontalOptions="CenterAndExpand">
@@ -32,30 +32,33 @@
             <Button x:Name="getWeatherBtn" Text="Entrer" WidthRequest="185" BorderWidth="1" >
               <!-- Set iOS colors; use defaults on other platforms -->
               <Button.TextColor>
-                <OnPlatform x:TypeArguments="Color" iOS="White"/>
+                <OnPlatform x:TypeArguments="Color" iOS="White" Android="White"/>
               </Button.TextColor>
               <Button.BorderColor>
-                <OnPlatform x:TypeArguments="Color" iOS="White"/>
+                <OnPlatform x:TypeArguments="Color" iOS="White" Android="White"/>
               </Button.BorderColor>
             </Button>
           </StackLayout>
         </StackLayout>
-        <StackLayout Padding="10,10,10,10" HorizontalOptions="Start">
-          <ContentView Style="{StaticResource fieldView}">
-            <Label Text="{Binding Title}" Style="{StaticResource fieldStyle}" FontSize= "32"/>
-             
+          
+        <StackLayout Padding="10,10,10,10" HorizontalOptions="Center">
+             <ContentView Style="{StaticResource fieldView}">
+            <Label x:Name="tempLabel" Text="{Binding Temperature}"
+                Style="{StaticResource fieldStyle}" FontSize="48" HorizontalOptions="Center" />
           </ContentView>
-          <Label Text="Visibilité" Style="{StaticResource labelStyle}" />
+            
+          <ContentView Style="{StaticResource fieldView}">
+            <Label Text="{Binding Title}" Style="{StaticResource fieldStyle}" FontSize= "32" HorizontalOptions="Center"/>
+          </ContentView>
+         
           <ContentView Style="{StaticResource fieldView}">
             <Label x:Name="visibilitylabel" Text="{Binding Visibility}"
-            Style="{StaticResource fieldStyle}" />
+            Style="{StaticResource fieldStyle}"  HorizontalOptions="Center"/>
           </ContentView>
-          <Label Text="Température" Style="{StaticResource labelStyle}" />
-          <ContentView Style="{StaticResource fieldView}">
-            <Label x:Name="tempLabel" Text="{Binding Temperature}"
-                Style="{StaticResource fieldStyle}" />
-          </ContentView>
-          <Label Text="Vitesse du vent" Style="{StaticResource labelStyle}" />
+         </StackLayout>
+          <StackLayout >
+            
+            <Label Text="Vitesse du vent" Style="{StaticResource labelStyle}" />
           <ContentView Style="{StaticResource fieldView}">
             <Label x:Name="windLabel" Text="{Binding Wind}" Style="{StaticResource fieldStyle}" />
           </ContentView>
