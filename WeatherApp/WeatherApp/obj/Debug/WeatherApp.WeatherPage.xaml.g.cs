@@ -17,9 +17,6 @@ namespace WeatherApp {
     public partial class WeatherPage : global::Xamarin.Forms.ContentPage {
         
         [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
-        private global::Xamarin.Forms.Label zipCodeLabel;
-        
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
         private global::Xamarin.Forms.Entry zipCodeEntry;
         
         [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
@@ -46,7 +43,6 @@ namespace WeatherApp {
         [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
         private void InitializeComponent() {
             this.LoadFromXaml(typeof(WeatherPage));
-            zipCodeLabel = this.FindByName<global::Xamarin.Forms.Label>("zipCodeLabel");
             zipCodeEntry = this.FindByName<global::Xamarin.Forms.Entry>("zipCodeEntry");
             getWeatherBtn = this.FindByName<global::Xamarin.Forms.Button>("getWeatherBtn");
             visibilitylabel = this.FindByName<global::Xamarin.Forms.Label>("visibilitylabel");

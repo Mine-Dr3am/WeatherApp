@@ -77,4 +77,6 @@ D:\Documents\C#\WeatherApp\WeatherApp\WeatherApp.Droid\obj\Debug\android\assets\
 D:\Documents\C#\WeatherApp\WeatherApp\WeatherApp.Droid\obj\Debug\android\assets\Xamarin.Forms.Platform.Android.dll.mdb
 D:\Documents\C#\WeatherApp\WeatherApp\WeatherApp.Droid\obj\Debug\android\assets\Xamarin.Forms.Xaml.dll.mdb
 D:\Documents\C#\WeatherApp\WeatherApp\WeatherApp.Droid\obj\Debug\WeatherApp.Droid.dll.mdb
-D:\Documents\C#\WeatherApp\WeatherApp\WeatherApp.Droid\bin\Debug\WeatherApp.Droid.dll.mdb
+D:\Documents\WeatherApplication\WeatherApp\WeatherApp.Droid\obj\Debug\WeatherApp.Droid.csprojResolveAssemblyReference.cache
+D:\Documents\WeatherApplication\WeatherApp\WeatherApp.Droid\obj\Debug\WeatherApp.Droid.dll
+D:\Documents\WeatherApplication\WeatherApp\WeatherApp.Droid\obj\Debug\WeatherApp.Droid.pdb
