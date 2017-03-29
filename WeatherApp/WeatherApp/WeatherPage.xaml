@@ -41,9 +41,9 @@
           </StackLayout>
         </StackLayout>
         <StackLayout Padding="10,10,10,10" HorizontalOptions="Start">
-          <Label Text="Destination" Style="{StaticResource labelStyle}" />
           <ContentView Style="{StaticResource fieldView}">
-            <Label Text="{Binding Title}" Style="{StaticResource fieldStyle}" />
+            <Label Text="{Binding Title}" Style="{StaticResource fieldStyle}" FontSize= "32"/>
+             
           </ContentView>
           <Label Text="Visibilité" Style="{StaticResource labelStyle}" />
           <ContentView Style="{StaticResource fieldView}">
