@@ -9,7 +9,8 @@
         public string Visibility { get; set; }
         public string Sunrise { get; set; }
         public string Sunset { get; set; }
-
+        public string Country { get; set; }
+        public string Pollution { get; set; }
         public Weather()
         {
             //Because labels bind to these values, set them to an empty string to
@@ -21,6 +22,8 @@
             this.Visibility = " ";
             this.Sunrise = " ";
             this.Sunset = " ";
+            this.Country = " ";
+            this.Pollution = " ";
         }
     }
 }

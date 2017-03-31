@@ -20,6 +20,8 @@ namespace WeatherApp
                 weather.Wind = (double)results["wind"]["speed"] + " Km/h";
                 weather.Humidity = (string)results["main"]["humidity"] + " %";
                 weather.Visibility = (string)results["weather"][0]["description"];
+                weather.Visibility = char.ToUpper(weather.Visibility[0]) + weather.Visibility.Substring(1);
+                weather.Country = (string)results["sys"]["country"];
 
                 DateTime time = new System.DateTime(1970, 1, 1, 0, 0, 0, 0);
                 DateTime sunrise = time.AddSeconds((double)results["sys"]["sunrise"]);
@@ -40,6 +42,13 @@ namespace WeatherApp
             string queryString = "http://api.openweathermap.org/data/2.5/weather?q=Grenoble&units=metric&lang=fr&appid=" + key;
             var results = await DataService.getDataFromService(queryString).ConfigureAwait(false);
 
+            //string polutionKey = "QfxTry6YjuZ3Wx9YJ";
+            //var lat = results["coord"]["lat"];
+            //var lon = results["coord"]["lon"];
+
+            //string queryStringPolution = "http://api.airvisual.com/v2/nearest_city?lat=45&lon=5&rad=Value&key=" + polutionKey;
+            //var polutionResults = await DataService.getDataFromService(queryStringPolution).ConfigureAwait(false);
+
             if (results["weather"] != null)
             {
                 Weather weather = new Weather();
@@ -48,6 +57,9 @@ namespace WeatherApp
                 weather.Wind = (double)results["wind"]["speed"] + " Km/h";
                 weather.Humidity = (string)results["main"]["humidity"] + " %";
                 weather.Visibility = (string)results["weather"][0]["description"];
+                weather.Visibility = char.ToUpper(weather.Visibility[0]) + weather.Visibility.Substring(1);
+                weather.Country = (string)results["sys"]["country"];
+                //weather.Pollution = (string)polutionResults["data"]["current"]["pollution"]["aqius"];
 
                 DateTime time = new System.DateTime(1970, 1, 1, 0, 0, 0, 0);
                 DateTime sunrise = time.AddSeconds((double)results["sys"]["sunrise"]);

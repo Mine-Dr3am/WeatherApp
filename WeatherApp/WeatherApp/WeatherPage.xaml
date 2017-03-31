@@ -24,8 +24,7 @@
     <ContentPage.Content>
         <ScrollView>
             <StackLayout BackgroundColor="White">
-                <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand"
-              BackgroundColor="#7f7e7e">
+                <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" BackgroundColor="#7f7e7e">
                     <StackLayout Padding="10,10,10,10" HorizontalOptions="CenterAndExpand">
                         <Entry x:Name="zipCodeEntry" Placeholder="Ville"/>
 
@@ -38,45 +37,48 @@
                                 <OnPlatform x:TypeArguments="Color" iOS="White" Android="White"/>
                             </Button.BorderColor>
                         </Button>
+                    
                     </StackLayout>
                 </StackLayout>
 
-                <StackLayout Padding="10,10,10,10" HorizontalOptions="Center">
+                <StackLayout BackgroundColor="#FF9801" Padding="10,10,10,-60">
+                    
                     <ContentView Style="{StaticResource fieldView}">
-                        <Label x:Name="visibilitylabel" Text="{Binding Visibility}"
-            Style="{StaticResource fieldStyle}"  HorizontalOptions="Center" FontSize="24"/>
+                        <Label Text="{Binding Title}" Style="{StaticResource fieldStyle}" TextColor="White" FontSize= "32" HorizontalOptions="Start" FontAttributes="Bold"/>
+                    </ContentView>
+                    
+                    <ContentView>
+                        <Label Text="{Binding Country}" Style="{StaticResource fieldStyle}" TextColor="White" TranslationX="10"/>
+                    </ContentView>
+                    
+                    <ContentView Style="{StaticResource fieldView}">
+                        <Label x:Name="visibilitylabel" Text="{Binding Visibility}" TextColor="White"
+                        Style="{StaticResource fieldStyle}" FontSize="24"/>
                     </ContentView>
 
                     <ContentView Style="{StaticResource fieldView}">
-                        <Label x:Name="tempLabel" Text="{Binding Temperature}"
-                Style="{StaticResource fieldStyle}" FontSize="48" HorizontalOptions="Center" />
+                        <Label x:Name="tempLabel" Text="{Binding Temperature}" TextColor="White"
+                        Style="{StaticResource fieldStyle}" FontSize="48" HorizontalOptions="End" TranslationY="-75" FontAttributes="Bold"/>
                     </ContentView>
-
-                    <ContentView Style="{StaticResource fieldView}">
-                        <Label Text="{Binding Title}" Style="{StaticResource fieldStyle}" FontSize= "32" HorizontalOptions="Center"/>
-                    </ContentView>
-
 
                 </StackLayout>
-                <StackLayout >
 
-                    <Label Text="Humidité" Style="{StaticResource labelStyle}" />
+                <StackLayout BackgroundColor="#149ee2" Padding="10,10,10,-60">
+                    <Label Text="Humidité" Style="{StaticResource labelStyle}" FontSize="Large" TextColor="White" HorizontalOptions="Start"/>
                     <ContentView Style="{StaticResource fieldView}">
-
-                        <Label x:Name="humidityLabel" Text="{Binding Humidity}"
-                Style="{StaticResource fieldStyle}" />
+                        <Label x:Name="humidityLabel" Text="{Binding Humidity}" Style="{StaticResource fieldStyle}" FontAttributes="Bold" TextColor="White"/>
+                    </ContentView>
+                    <Label Text="Vitesse du vent" Style="{StaticResource labelStyle}" FontSize="Large" TextColor="White" TranslationY="-66" TranslationX="190"/>
+                    <ContentView>
+                        <Label x:Name="windLabel" Text="{Binding Wind}" Style="{StaticResource fieldStyle}" TranslationY="-66" TranslationX="195" TextColor="White" FontAttributes="Bold"/>
+                    </ContentView>
+                </StackLayout>
+                <StackLayout BackgroundColor="#26B14C" Padding="10,10,10,10">
+                    <Label Text="Polution de l'air" Style="{StaticResource labelStyle}" FontSize="Large" TextColor="White" HorizontalOptions="Start" />
+                    <ContentView>
+                        <Label x:Name="polutionLabel" Text="{Binding Pollution}" Style="{StaticResource fieldStyle}" FontAttributes="Bold" TextColor="White" />
                     </ContentView>
 
-                    <Label Text="Heure du lever de soleil" Style="{StaticResource labelStyle}" />
-                    <ContentView Style="{StaticResource fieldView}">
-                        <Label x:Name="sunriseLabel" Text="{Binding Sunrise}"
-                Style="{StaticResource fieldStyle}" />
-                    </ContentView>
-                    <Label Text="Heure du coucher de soleil" Style="{StaticResource labelStyle}" />
-                    <ContentView Style="{StaticResource fieldView}">
-                        <Label x:Name="sunsetLabel" Text="{Binding Sunset}"
-                Style="{StaticResource fieldStyle}" />
-                    </ContentView>
                 </StackLayout>
             </StackLayout>
         </ScrollView>
