@@ -44,3 +44,7 @@ D:\Documents\WeatherApplication\WeatherApp\WeatherApp\obj\Debug\WeatherApp.cspro
 D:\Documents\WeatherApplication\WeatherApp\WeatherApp\obj\Debug\WeatherApp.WeatherPage.xaml.g.cs
 D:\Documents\WeatherApplication\WeatherApp\WeatherApp\obj\Debug\WeatherApp.dll
 D:\Documents\WeatherApplication\WeatherApp\WeatherApp\obj\Debug\WeatherApp.pdb
+D:\Documents\WeatherApplication\WeatherApp\WeatherApp\obj\Debug\WeatherApp.dll.mdb
+D:\Documents\WeatherApplication\WeatherApp\WeatherApp\bin\Debug\WeatherApp.dll.mdb
+D:\Documents\WeatherApplication\WeatherApp\WeatherApp\obj\Debug\WeatherApp.dll.mdb
+D:\Documents\WeatherApplication\WeatherApp\WeatherApp\bin\Debug\WeatherApp.dll.mdb

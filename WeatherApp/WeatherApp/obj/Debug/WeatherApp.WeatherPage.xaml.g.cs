@@ -29,9 +29,6 @@ namespace WeatherApp {
         private global::Xamarin.Forms.Label tempLabel;
         
         [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
-        private global::Xamarin.Forms.Label windLabel;
-        
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
         private global::Xamarin.Forms.Label humidityLabel;
         
         [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
@@ -47,7 +44,6 @@ namespace WeatherApp {
             getWeatherBtn = this.FindByName<global::Xamarin.Forms.Button>("getWeatherBtn");
             visibilitylabel = this.FindByName<global::Xamarin.Forms.Label>("visibilitylabel");
             tempLabel = this.FindByName<global::Xamarin.Forms.Label>("tempLabel");
-            windLabel = this.FindByName<global::Xamarin.Forms.Label>("windLabel");
             humidityLabel = this.FindByName<global::Xamarin.Forms.Label>("humidityLabel");
             sunriseLabel = this.FindByName<global::Xamarin.Forms.Label>("sunriseLabel");
             sunsetLabel = this.FindByName<global::Xamarin.Forms.Label>("sunsetLabel");

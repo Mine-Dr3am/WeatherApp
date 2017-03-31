@@ -12,6 +12,7 @@ namespace WeatherApp
         public App()
         {
             MainPage = new NavigationPage(new WeatherPage());
+
         }
 
         protected override void OnStart()
