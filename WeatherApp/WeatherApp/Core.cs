@@ -22,6 +22,8 @@ namespace WeatherApp
                 weather.Visibility = (string)results["weather"][0]["description"];
                 weather.Visibility = char.ToUpper(weather.Visibility[0]) + weather.Visibility.Substring(1);
                 weather.Country = (string)results["sys"]["country"];
+                weather.Lat = (string)results["coord"]["lat"];
+                weather.Lon = (string)results["coord"]["lon"];
 
                 DateTime time = new System.DateTime(1970, 1, 1, 0, 0, 0, 0);
                 DateTime sunrise = time.AddSeconds((double)results["sys"]["sunrise"]);
@@ -42,12 +44,11 @@ namespace WeatherApp
             string queryString = "http://api.openweathermap.org/data/2.5/weather?q=Grenoble&units=metric&lang=fr&appid=" + key;
             var results = await DataService.getDataFromService(queryString).ConfigureAwait(false);
 
-            //string polutionKey = "QfxTry6YjuZ3Wx9YJ";
-            //var lat = results["coord"]["lat"];
-            //var lon = results["coord"]["lon"];
+            string polutionKey = "QfxTry6YjuZ3Wx9YJ";
 
-            //string queryStringPolution = "http://api.airvisual.com/v2/nearest_city?lat=45&lon=5&rad=Value&key=" + polutionKey;
-            //var polutionResults = await DataService.getDataFromService(queryStringPolution).ConfigureAwait(false);
+
+            string queryStringPolution = "http://api.airvisual.com/v2/nearest_city?lat=45.1666700&lon=5.7166700&key=" + polutionKey;
+            var polutionResults = await DataService.getDataFromService(queryStringPolution).ConfigureAwait(false);
 
             if (results["weather"] != null)
             {
@@ -59,7 +60,8 @@ namespace WeatherApp
                 weather.Visibility = (string)results["weather"][0]["description"];
                 weather.Visibility = char.ToUpper(weather.Visibility[0]) + weather.Visibility.Substring(1);
                 weather.Country = (string)results["sys"]["country"];
-                //weather.Pollution = (string)polutionResults["data"]["current"]["pollution"]["aqius"];
+                weather.Pollution = (string)polutionResults["data"]["current"]["pollution"]["aqius"] + " index aqi (Air Quality Index)";
+                
 
                 DateTime time = new System.DateTime(1970, 1, 1, 0, 0, 0, 0);
                 DateTime sunrise = time.AddSeconds((double)results["sys"]["sunrise"]);
