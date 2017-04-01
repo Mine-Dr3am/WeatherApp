@@ -6,6 +6,7 @@
         public string Temperature { get; set; }
         public string Wind { get; set; }
         public string Humidity { get; set; }
+        public string Datetime { get; set; }
         public string Visibility { get; set; }
         public string Sunrise { get; set; }
         public string Sunset { get; set; }
@@ -14,7 +15,11 @@
         public string PollutionIndex { get; set; }
         public string Lon { get; set; }
         public string Lat { get; set; }
-        
+        public string Day { get; set; }
+        public string color1 { get; set; }
+        public string color2 { get; set; }
+        public string color3 { get; set; }
+
 
         public Weather()
         {
@@ -32,34 +37,13 @@
             this.Lon = " ";
             this.Lat = " ";
             this.PollutionIndex = " ";
+            this.Datetime = " ";
+            this.Day = "Jour";
+            this.color1 = "#0B29A2";
+            this.color2 = "#3387D7";
+            this.color3 = "#3DBBEB";
         }
 
-        public void ChangePollutionIndex()
-        {
-            if (int.Parse(this.Pollution) > 50)
-            {
-                this.PollutionIndex = "Bien";
-            }
-            if (int.Parse(this.Pollution) <= 50 || int.Parse(this.Pollution) > 100)
-            {
-                this.PollutionIndex = "Modéré";
-            }
-            if (int.Parse(this.Pollution) <= 100 || int.Parse(this.Pollution) > 150)
-            {
-                this.PollutionIndex = "Mauvais pour la santé pour les personnes sensibles";
-            }
-            if (int.Parse(this.Pollution) <= 150 || int.Parse(this.Pollution) > 200)
-            {
-                this.PollutionIndex = "Mauvais pour la santé";
-            }
-            if (int.Parse(this.Pollution) <= 200 || int.Parse(this.Pollution) > 300)
-            {
-                this.PollutionIndex = "Très mauvais pour la santé";
-            }
-            if (int.Parse(this.Pollution) <= 300)
-            {
-                this.PollutionIndex = "Dangereux";
-            }
-        }
+       
     }
 }

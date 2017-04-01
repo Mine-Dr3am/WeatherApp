@@ -8,9 +8,15 @@ namespace WeatherApp
         public static async Task<Weather> GetWeather(string zipCode)
         {
             string key = "7fecffff83edb60a46a1aafef9dd8f17";
-            string queryString = "http://api.openweathermap.org/data/2.5/weather?q="
-                + zipCode + "&units=metric&lang=fr&appid=" + key;
+            string queryString = "http://api.openweathermap.org/data/2.5/weather?q=" + zipCode + "&units=metric&lang=fr&appid=" + key;
             var results = await DataService.getDataFromService(queryString).ConfigureAwait(false);
+            var lat = results["coord"]["lat"];
+            var lon = results["coord"]["lon"];
+
+
+            string polutionKey = "QfxTry6YjuZ3Wx9YJ";
+            string queryStringPolution = "http://api.airvisual.com/v2/nearest_city?lat=" + lat +"&lon=" + lon + "&key=" + polutionKey;
+            var polutionResults = await DataService.getDataFromService(queryStringPolution).ConfigureAwait(false);
 
             if (results["weather"] != null)
             {
@@ -22,14 +28,26 @@ namespace WeatherApp
                 weather.Visibility = (string)results["weather"][0]["description"];
                 weather.Visibility = char.ToUpper(weather.Visibility[0]) + weather.Visibility.Substring(1);
                 weather.Country = (string)results["sys"]["country"];
-                weather.Lat = (string)results["coord"]["lat"];
-                weather.Lon = (string)results["coord"]["lon"];
+                weather.Pollution = (string)polutionResults["data"]["current"]["pollution"]["aqius"] + " AQI (Air Quality Index)";
 
-                DateTime time = new System.DateTime(1970, 1, 1, 0, 0, 0, 0);
-                DateTime sunrise = time.AddSeconds((double)results["sys"]["sunrise"]);
-                DateTime sunset = time.AddSeconds((double)results["sys"]["sunset"]);
-                weather.Sunrise = sunrise.ToString() + " UTC";
-                weather.Sunset = sunset.ToString() + " UTC";
+                weather.Sunrise = (string)results["sys"]["sunrise"];
+                weather.Sunset = (string)results["sys"]["sunset"];
+                weather.Datetime = (string)results["dt"];
+
+
+                int datetime = int.Parse(weather.Datetime);
+                int sunrise = int.Parse(weather.Sunrise);
+                int sunset = int.Parse(weather.Sunset);
+
+                if (datetime < sunset)//Si c'est le jour 
+                {
+                    weather.Day = "Jour";
+                }
+                else
+                {
+                    weather.Day = "Nuit";
+                }
+
                 return weather;
             }
             else
@@ -45,8 +63,6 @@ namespace WeatherApp
             var results = await DataService.getDataFromService(queryString).ConfigureAwait(false);
 
             string polutionKey = "QfxTry6YjuZ3Wx9YJ";
-
-
             string queryStringPolution = "http://api.airvisual.com/v2/nearest_city?lat=45.1666700&lon=5.7166700&key=" + polutionKey;
             var polutionResults = await DataService.getDataFromService(queryStringPolution).ConfigureAwait(false);
 
@@ -60,20 +76,34 @@ namespace WeatherApp
                 weather.Visibility = (string)results["weather"][0]["description"];
                 weather.Visibility = char.ToUpper(weather.Visibility[0]) + weather.Visibility.Substring(1);
                 weather.Country = (string)results["sys"]["country"];
-                weather.Pollution = (string)polutionResults["data"]["current"]["pollution"]["aqius"] + " index aqi (Air Quality Index)";
-                
+                weather.Pollution = (string)polutionResults["data"]["current"]["pollution"]["aqius"] + " AQI (Air Quality Index)";
 
-                DateTime time = new System.DateTime(1970, 1, 1, 0, 0, 0, 0);
-                DateTime sunrise = time.AddSeconds((double)results["sys"]["sunrise"]);
-                DateTime sunset = time.AddSeconds((double)results["sys"]["sunset"]);
-                weather.Sunrise = sunrise.ToString() + " UTC";
-                weather.Sunset = sunset.ToString() + " UTC";
+                weather.Sunrise = (string)results["sys"]["sunrise"];
+                weather.Sunset =  (string)results["sys"]["sunset"];
+                weather.Datetime = (string)results["dt"];
+
+
+                int datetime = int.Parse(weather.Datetime);
+                int sunrise = int.Parse(weather.Sunrise);
+                int sunset= int.Parse(weather.Sunset);
+
+                if(datetime > sunrise)//Si c'est le jour 
+                {
+                    weather.Day = "Jour";
+                }
+                else
+                {
+                    weather.Day = "Nuit";
+                }
                 return weather;
             }
             else
-            {
+            {   
                 return null;
             }
         }
+
+        
+           
     }
 }
