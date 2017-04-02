@@ -120,7 +120,6 @@ D:\Documents\WeatherApplication\WeatherApp\WeatherApp.Droid\obj\Debug\res\drawab
 D:\Documents\WeatherApplication\WeatherApp\WeatherApp.Droid\obj\Debug\R.cs.flag
 D:\Documents\WeatherApplication\WeatherApp\WeatherApp.Droid\obj\Debug\uploadflags.txt
 D:\Documents\WeatherApplication\WeatherApp\WeatherApp.Droid\bin\Debug\WeatherApp.Droid.dll.mdb
-D:\Documents\WeatherApplication\WeatherApp\WeatherApp.Droid\bin\Debug\WeatherApp.dll.mdb
 D:\Documents\WeatherApplication\WeatherApp\WeatherApp.Droid\bin\Debug\Java.Interop.dll.mdb
 D:\Documents\WeatherApplication\WeatherApp\WeatherApp.Droid\bin\Debug\Microsoft.CSharp.dll.mdb
 D:\Documents\WeatherApplication\WeatherApp\WeatherApp.Droid\bin\Debug\Mono.Android.dll.mdb
@@ -135,6 +134,7 @@ D:\Documents\WeatherApplication\WeatherApp\WeatherApp.Droid\bin\Debug\System.Run
 D:\Documents\WeatherApplication\WeatherApp\WeatherApp.Droid\bin\Debug\System.ServiceModel.Internals.dll.mdb
 D:\Documents\WeatherApplication\WeatherApp\WeatherApp.Droid\bin\Debug\System.Xml.dll.mdb
 D:\Documents\WeatherApplication\WeatherApp\WeatherApp.Droid\bin\Debug\System.Xml.Linq.dll.mdb
+D:\Documents\WeatherApplication\WeatherApp\WeatherApp.Droid\bin\Debug\WeatherApp.dll.mdb
 D:\Documents\WeatherApplication\WeatherApp\WeatherApp.Droid\obj\Debug\android\assets\FormsViewGroup.dll.mdb
 D:\Documents\WeatherApplication\WeatherApp\WeatherApp.Droid\obj\Debug\android\assets\Java.Interop.dll.mdb
 D:\Documents\WeatherApplication\WeatherApp\WeatherApp.Droid\obj\Debug\android\assets\Microsoft.CSharp.dll.mdb

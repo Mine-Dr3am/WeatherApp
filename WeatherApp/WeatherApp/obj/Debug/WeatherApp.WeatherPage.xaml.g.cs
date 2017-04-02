@@ -23,6 +23,9 @@ namespace WeatherApp {
         private global::Xamarin.Forms.Button getWeatherBtn;
         
         [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
+        private global::Xamarin.Forms.Label dayIndex;
+        
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
         private global::Xamarin.Forms.Label visibilitylabel;
         
         [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
@@ -32,21 +35,26 @@ namespace WeatherApp {
         private global::Xamarin.Forms.Label humidityLabel;
         
         [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
-        private global::Xamarin.Forms.Label sunriseLabel;
+        private global::Xamarin.Forms.Label windLabel;
         
         [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
-        private global::Xamarin.Forms.Label sunsetLabel;
+        private global::Xamarin.Forms.Label pollutionLabel;
+        
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
+        private global::Xamarin.Forms.Label pollutionIndex;
         
         [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
         private void InitializeComponent() {
             this.LoadFromXaml(typeof(WeatherPage));
             zipCodeEntry = this.FindByName<global::Xamarin.Forms.Entry>("zipCodeEntry");
             getWeatherBtn = this.FindByName<global::Xamarin.Forms.Button>("getWeatherBtn");
+            dayIndex = this.FindByName<global::Xamarin.Forms.Label>("dayIndex");
             visibilitylabel = this.FindByName<global::Xamarin.Forms.Label>("visibilitylabel");
             tempLabel = this.FindByName<global::Xamarin.Forms.Label>("tempLabel");
             humidityLabel = this.FindByName<global::Xamarin.Forms.Label>("humidityLabel");
-            sunriseLabel = this.FindByName<global::Xamarin.Forms.Label>("sunriseLabel");
-            sunsetLabel = this.FindByName<global::Xamarin.Forms.Label>("sunsetLabel");
+            windLabel = this.FindByName<global::Xamarin.Forms.Label>("windLabel");
+            pollutionLabel = this.FindByName<global::Xamarin.Forms.Label>("pollutionLabel");
+            pollutionIndex = this.FindByName<global::Xamarin.Forms.Label>("pollutionIndex");
         }
     }
 }

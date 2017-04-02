@@ -58,52 +58,56 @@ namespace WeatherApp
 
         public static async Task<Weather> GetStartWeather()
         {
-            string key = "7fecffff83edb60a46a1aafef9dd8f17";
-            string queryString = "http://api.openweathermap.org/data/2.5/weather?q=Grenoble&units=metric&lang=fr&appid=" + key;
-            var results = await DataService.getDataFromService(queryString).ConfigureAwait(false);
-
             string polutionKey = "QfxTry6YjuZ3Wx9YJ";
-            string queryStringPolution = "http://api.airvisual.com/v2/nearest_city?lat=45.1666700&lon=5.7166700&key=" + polutionKey;
+            string queryStringPolution = "http://api.airvisual.com/v2/nearest_city?&key=" + polutionKey;
             var polutionResults = await DataService.getDataFromService(queryStringPolution).ConfigureAwait(false);
-
-            if (results["weather"] != null)
+            if (polutionResults["status"] != null)
             {
-                Weather weather = new Weather();
-                weather.Title = (string)results["name"];
-                weather.Temperature = ((double)results["main"]["temp"]) + " °C";
-                weather.Wind = (double)results["wind"]["speed"] + " Km/h";
-                weather.Humidity = (string)results["main"]["humidity"] + " %";
-                weather.Visibility = (string)results["weather"][0]["description"];
-                weather.Visibility = char.ToUpper(weather.Visibility[0]) + weather.Visibility.Substring(1);
-                weather.Country = (string)results["sys"]["country"];
-                weather.Pollution = (string)polutionResults["data"]["current"]["pollution"]["aqius"] + " AQI (Air Quality Index)";
+                var city = polutionResults["data"]["city"];
+                string key = "7fecffff83edb60a46a1aafef9dd8f17";
+                string queryString = "http://api.openweathermap.org/data/2.5/weather?q=" + city + "&units=metric&lang=fr&appid=" + key;
+                var results = await DataService.getDataFromService(queryString).ConfigureAwait(false);
 
-                weather.Sunrise = (string)results["sys"]["sunrise"];
-                weather.Sunset =  (string)results["sys"]["sunset"];
-                weather.Datetime = (string)results["dt"];
-
-
-                int datetime = int.Parse(weather.Datetime);
-                int sunrise = int.Parse(weather.Sunrise);
-                int sunset= int.Parse(weather.Sunset);
-
-                if(datetime > sunrise)//Si c'est le jour 
+                if (results["weather"] != null)
                 {
-                    weather.Day = "Jour";
+                    Weather weather = new Weather();
+                    weather.Title = (string)results["name"];
+                    weather.Temperature = ((double)results["main"]["temp"]) + " °C";
+                    weather.Wind = (double)results["wind"]["speed"] + " Km/h";
+                    weather.Humidity = (string)results["main"]["humidity"] + " %";
+                    weather.Visibility = (string)results["weather"][0]["description"];
+                    weather.Visibility = char.ToUpper(weather.Visibility[0]) + weather.Visibility.Substring(1);
+                    weather.Country = (string)results["sys"]["country"];
+                    weather.Pollution = (string)polutionResults["data"]["current"]["pollution"]["aqius"] + " AQI (Air Quality Index)";
+
+                    weather.Sunrise = (string)results["sys"]["sunrise"];
+                    weather.Sunset = (string)results["sys"]["sunset"];
+                    weather.Datetime = (string)results["dt"];
+
+
+                    int datetime = int.Parse(weather.Datetime);
+                    int sunrise = int.Parse(weather.Sunrise);
+                    int sunset = int.Parse(weather.Sunset);
+
+                    if (datetime > sunrise)//Si c'est le jour 
+                    {
+                        weather.Day = "Jour";
+                    }
+                    else
+                    {
+                        weather.Day = "Nuit";
+                    }
+                    return weather;
                 }
                 else
                 {
-                    weather.Day = "Nuit";
+                    return null;
                 }
-                return weather;
             }
             else
-            {   
+            {
                 return null;
             }
         }
-
-        
-           
     }
 }
