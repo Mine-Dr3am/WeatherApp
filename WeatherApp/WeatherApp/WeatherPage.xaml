@@ -41,27 +41,24 @@
                     </StackLayout>
                 </StackLayout>
 
-                <StackLayout BackgroundColor= "{Binding color1}" Padding="10,10,10,-80">
+                <StackLayout BackgroundColor= "{Binding color1}" Padding="10,10,10,-70">
                     
                     <ContentView Style="{StaticResource fieldView}">
                         <Label Text="{Binding Title}" Style="{StaticResource fieldStyle}" TextColor="White" FontSize= "32" HorizontalOptions="Start" FontAttributes="Bold"/>
                     </ContentView>
-                    <ContentView>
-                        <Label x:Name="dayIndex" Text="{Binding Day}" Style="{StaticResource fieldStyle}" TextColor="White" FontSize="24" TranslationY="-35" TranslationX="200"/>
-                    </ContentView>
+                    
                     
                     <ContentView>
-                        <Label Text="{Binding Country}" Style="{StaticResource fieldStyle}" TextColor="White" TranslationX="10" TranslationY="-50"/>
+                        <Label Text="{Binding Country}" Style="{StaticResource fieldStyle}" TextColor="White" TranslationX="10" TranslationY="-15"/>
                     </ContentView>
                     
                     <ContentView Style="{StaticResource fieldView}">
-                        <Label x:Name="visibilitylabel" Text="{Binding Visibility}" TextColor="White" TranslationY="-50"
-                        Style="{StaticResource fieldStyle}" FontSize="24"/>
+                        <Label x:Name="visibilitylabel" Text="{Binding Visibility}" TextColor="White" TranslationY="-20" Style="{StaticResource fieldStyle}" FontSize="24"/>
                     </ContentView>
 
                     <ContentView Style="{StaticResource fieldView}">
                         <Label x:Name="tempLabel" Text="{Binding Temperature}" TextColor="White"
-                        Style="{StaticResource fieldStyle}" FontSize="48" HorizontalOptions="End" TranslationY="-115" FontAttributes="Bold"/>
+                        Style="{StaticResource fieldStyle}" FontSize="48" HorizontalOptions="End" TranslationY="-75" FontAttributes="Bold"/>
                     </ContentView>
 
                 </StackLayout>
@@ -69,22 +66,23 @@
                 <StackLayout BackgroundColor="{Binding color2}" Padding="10,10,10,-30">
                     <Label Text="Humidité" Style="{StaticResource labelStyle}" FontSize="Large" TextColor="White" HorizontalOptions="Start"/>
                     <ContentView Style="{StaticResource fieldView}">
-                        <Label x:Name="humidityLabel" Text="{Binding Humidity}" Style="{StaticResource fieldStyle}" FontAttributes="Bold" TextColor="White"/>
+                        <Label x:Name="humidityLabel" Text="{Binding Humidity}" Style="{StaticResource fieldStyle}" FontAttributes="Bold" TextColor="White" TranslationX="20"/>
                     </ContentView>
                     <Label Text="Vitesse du vent" Style="{StaticResource labelStyle}" FontSize="Large" TextColor="White" TranslationY="-66" TranslationX="190"/>
                     <ContentView>
-                        <Label x:Name="windLabel" Text="{Binding Wind}" Style="{StaticResource fieldStyle}" TranslationY="-66" TranslationX="195" TextColor="White" FontAttributes="Bold"/>
+                        <Label x:Name="windLabel" Text="{Binding Wind}" Style="{StaticResource fieldStyle}" TranslationY="-66" TranslationX="250" TextColor="White" FontAttributes="Bold"/>
                     </ContentView>
                 </StackLayout>
-                <StackLayout BackgroundColor="{Binding color3}" Padding="10,10,10,10">
+                <StackLayout BackgroundColor="{Binding color3}" Padding="10,10,10, 10">
+                    
                     <Label Text="Polution de l'air" Style="{StaticResource labelStyle}" FontSize="Large" TextColor="White" HorizontalOptions="Start" />
                     <ContentView>
-                        <Label x:Name="pollutionLabel" Text="{Binding Pollution}" Style="{StaticResource fieldStyle}" FontAttributes="Bold" TextColor="White" />
+                        <Label x:Name="pollutionLabel" Text="{Binding Pollution}" Style="{StaticResource fieldStyle}" FontAttributes="Bold" TextColor="White"/>
                     </ContentView>
 
+
                     <ContentView>
-                        <Label x:Name="pollutionIndex" Text="{Binding PollutionIndex}" Style="{StaticResource fieldStyle}" TranslationY="-66" TranslationX="195" TextColor="White" FontAttributes="Bold"/>
-                        
+                        <Label x:Name="dayIndex" Text="{Binding Day}" Style="{StaticResource fieldStyle}" TextColor="White" FontAttributes="Bold" FontSize="24" TranslationY="-35" TranslationX="245"/>
                     </ContentView>
 
                 </StackLayout>

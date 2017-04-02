@@ -12,7 +12,6 @@
         public string Sunset { get; set; }
         public string Country { get; set; }
         public string Pollution { get; set; }
-        public string PollutionIndex { get; set; }
         public string Lon { get; set; }
         public string Lat { get; set; }
         public string Day { get; set; }
@@ -36,9 +35,8 @@
             this.Pollution = " ";
             this.Lon = " ";
             this.Lat = " ";
-            this.PollutionIndex = " ";
             this.Datetime = " ";
-            this.Day = "Jour";
+            this.Day = " ";
             this.color1 = "#0B29A2";
             this.color2 = "#3387D7";
             this.color3 = "#3DBBEB";
